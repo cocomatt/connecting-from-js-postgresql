@@ -2,8 +2,9 @@
   "name": "connecting-from-js-postgresql",
   "version": "1.0.0",
   "description": "",
-  "main": "test_script.js",
+  "main": "query_people_knex.js",
   "dependencies": {
+    "knex": "^0.15.2",
     "pg": "^7.5.0"
   },
   "devDependencies": {
