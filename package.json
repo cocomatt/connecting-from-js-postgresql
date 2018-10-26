@@ -1,0 +1,24 @@
+{
+  "name": "connecting-from-js-postgresql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test_script.js",
+  "dependencies": {
+    "pg": "^7.5.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cocomatt/connecting-from-js-postgresql.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cocomatt/connecting-from-js-postgresql/issues"
+  },
+  "homepage": "https://github.com/cocomatt/connecting-from-js-postgresql#readme"
+}
