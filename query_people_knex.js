@@ -9,6 +9,8 @@ const knex = require('knex')({
     user: settings.user,
     password: settings.password,
     database: settings.database,
+    port: settings.port,
+    ssl: settings.ssl,
   },
 });
 
@@ -36,6 +38,8 @@ function queryByName(name) {
         console.error(err);
       }
       displayQueryByName(rows);
-    });
+    })
+    .finally(() => knex.destroy());
 };
+
 queryByName(arg);
