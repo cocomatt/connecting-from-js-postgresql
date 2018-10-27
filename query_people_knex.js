@@ -12,10 +12,10 @@ const knex = require('knex')({
   },
 });
 
-const arg = process.argv[2];
+const arg = process.argv[2].toString();
 console.log(arg);
 
-const displayQueryByName = function showsResultsOfQueryByName(results) {
+function displayQueryByName(results) {
   results.forEach(function(val, index) {
     const id = results[index].id;
     const firstName = results[index].first_name;
@@ -25,23 +25,17 @@ const displayQueryByName = function showsResultsOfQueryByName(results) {
   });
 };
 
-const queryByName = function queriesUserEnteredArgument(name) {
-  // console.log(knex('famous_people').where('last_name', 'Lincoln')._single);
-  // console.log(knex('famous_people').toString());
-  // console.log(knex('famous_people').where('last_name', 'Lincoln').toString());
+function queryByName(name) {
   knex
     .select('*')
     .from('famous_people')
-    .where('last_name', 'like', `%${name}%`)
-    // .where('first_name', 'like', `%${name}%`)
-    // .orWhere('last_name', 'like', `%${name}%`)
+    .where('first_name', 'like', `%${name}%`)
+    .orWhere('last_name', 'like', `%${name}%`)
     .asCallback((err, rows) => {
       if (err) {
-        return console.error(err);
+        console.error(err);
       }
       displayQueryByName(rows);
     });
-  knex.destroy();
 };
-
 queryByName(arg);
