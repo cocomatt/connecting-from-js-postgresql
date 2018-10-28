@@ -1,5 +1,3 @@
-// github connection fix
-
 'use strict';
 
 const settings = require('./settings'); // settings.json
@@ -16,8 +14,7 @@ const knex = require('knex')({
   },
 });
 
-const arg = process.argv[2].toString();
-console.log(arg);
+const arg = process.argv[2].toString().toLowerCase().charAt(0).toUpperCase() + process.argv[2].toString().toLowerCase().slice(1);
 
 function displayQueryByName(results) {
   results.forEach(function(val, index) {
