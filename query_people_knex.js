@@ -33,11 +33,11 @@ function queryByName(name) {
     .from('famous_people')
     .where('first_name', 'like', `%${name}%`)
     .orWhere('last_name', 'like', `%${name}%`)
-    .asCallback((err, rows) => {
-      if (err) {
-        console.error(err);
-      }
+    .then(function(rows) {
       displayQueryByName(rows);
+    })
+    .catch(function(error) {
+      console.error(error);
     })
     .finally(() => knex.destroy());
 };
