@@ -1,3 +1,5 @@
+// github connection fix
+
 'use strict';
 
 const settings = require('./settings'); // settings.json
